@@ -13,7 +13,7 @@
 
 ## 📧 邮件效果预览
 
-![邮件效果预览](https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Professional%20email%20preview%20showing%20a%20Chinese%20stock%20market%20daily%20report%2C%20clean%20modern%20email%20design%2C%20showing%20stock%20market%20data%20tables%2C%20AI%20analysis%20content%2C%20green%20and%20red%20color%20scheme%20for%20stock%20gains%20and%20losses%2C%20professional%20financial%20report%20style%2C%20clean%20white%20background%2C%20elegant%20typography&image_size=landscape_16_9)
+![邮件效果预览](assets/email_preview.png)
 
 ## 🚀 快速开始
 
