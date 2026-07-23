@@ -9,6 +9,7 @@
 - 📧 **邮件推送**：每日18:00自动发送分析报告到指定邮箱
 - 🔔 **订阅管理**：支持一键取消/恢复订阅
 - 📅 **交易日判断**：自动识别交易日和节假日
+- 🗑️ **自动清理**：每周自动清理7天前的旧数据文件
 
 ## 🚀 快速开始
 
@@ -67,6 +68,8 @@ python main.py
 
 双击运行 `config_scheduler.bat`，将自动创建Windows任务计划，每天18:00自动运行。
 
+**注意**：运行时会弹出UAC权限请求，请点击"是"以授予管理员权限。
+
 ## 📁 项目结构
 
 ```
@@ -78,11 +81,13 @@ daily_market_tracking/
 ├── .gitattributes          # Git属性配置
 ├── requirements.txt        # Python依赖
 ├── run.bat                 # 手动运行脚本
-├── run_daily.bat           # 每日运行脚本
-├── config_scheduler.bat    # 配置自动任务脚本
+├── run_daily.bat           # 每日运行脚本（任务计划调用）
+├── config_scheduler.bat    # 配置自动任务脚本（推荐使用）
 ├── config_task.py          # 任务配置Python脚本
 ├── unsubscribe.bat         # 取消订阅脚本
 ├── resubscribe.bat         # 恢复订阅脚本
+├── check_akshare.py        # akshare检查脚本
+├── debug_data.py           # 数据调试脚本
 ├── config/
 │   └── config.py           # 配置管理
 ├── modules/
@@ -92,7 +97,7 @@ daily_market_tracking/
 ├── data/
 │   ├── daily/              # 每日数据文件（自动生成）
 │   └── subscription_status.json  # 订阅状态（自动生成）
-└── market_tracking.log     # 运行日志（自动生成）
+└── market_tracking.log     # 运行日志（自动生成，5MB自动轮转）
 ```
 
 ## 📝 使用说明
@@ -101,6 +106,16 @@ daily_market_tracking/
 
 ```bash
 python main.py
+```
+
+### 配置自动运行
+
+```bash
+# 方法1：双击运行（推荐）
+config_scheduler.bat
+
+# 方法2：使用Python脚本
+python config_task.py
 ```
 
 ### 取消订阅
@@ -113,7 +128,7 @@ python main.py
 
 ### 查看日志
 
-查看 `market_tracking.log` 文件了解程序运行情况。
+查看 `market_tracking.log` 文件了解程序运行情况。日志文件大小限制为5MB，自动保留最近4个备份。
 
 ## 🔧 技术栈
 
@@ -128,6 +143,7 @@ python main.py
 2. 数据收集时间为交易日下午18:00后
 3. 请确保电脑在18:00时处于开机状态
 4. AI分析结果仅供参考，不构成投资建议
+5. 首次配置任务计划时需要输入账户密码
 
 ## 📄 许可证
 
