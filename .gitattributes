@@ -1,0 +1,15 @@
+# 统一中文编码
+*.py text encoding=utf-8
+*.md text encoding=utf-8
+*.txt text encoding=utf-8
+*.json text encoding=utf-8
+*.bat text encoding=utf-8
+*.ps1 text encoding=utf-8
+
+# 行尾符处理
+*.py eol=lf
+*.md eol=lf
+*.txt eol=lf
+*.json eol=lf
+*.bat eol=crlf
+*.ps1 eol=crlf
