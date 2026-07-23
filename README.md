@@ -25,12 +25,16 @@ pip install -r requirements.txt
 
 ### 3. 配置环境变量
 
-复制 `.env` 文件并填写你的配置信息：
+复制 `.env.example` 文件为 `.env` 并填写你的配置信息：
 
 ```bash
 # AI配置
 AI_PROVIDER=agnes
 AGNES_API_KEY=你的Agnes AI API密钥
+AGNES_MODEL=agnes-2.0-flash
+
+# 运行时间配置
+RUN_TIME=18:00
 
 # 邮件配置
 SMTP_SERVER=smtp.qq.com
@@ -61,18 +65,22 @@ python main.py
 
 ### 5. 配置自动运行
 
-双击运行 `setup_scheduler.bat`，将自动创建Windows任务计划，每天18:00自动运行。
+双击运行 `config_scheduler.bat`，将自动创建Windows任务计划，每天18:00自动运行。
 
 ## 📁 项目结构
 
 ```
 daily_market_tracking/
 ├── main.py                 # 主程序入口
-├── .env                    # 环境配置文件
+├── .env                    # 环境配置文件（需自行创建）
+├── .env.example            # 环境配置示例
 ├── .gitignore              # Git忽略文件
+├── .gitattributes          # Git属性配置
 ├── requirements.txt        # Python依赖
 ├── run.bat                 # 手动运行脚本
-├── setup_scheduler.bat     # 配置自动任务脚本
+├── run_daily.bat           # 每日运行脚本
+├── config_scheduler.bat    # 配置自动任务脚本
+├── config_task.py          # 任务配置Python脚本
 ├── unsubscribe.bat         # 取消订阅脚本
 ├── resubscribe.bat         # 恢复订阅脚本
 ├── config/
@@ -82,9 +90,9 @@ daily_market_tracking/
 │   ├── ai_analyzer.py      # AI分析模块
 │   └── mail_sender.py      # 邮件发送模块
 ├── data/
-│   ├── daily/              # 每日数据文件
-│   └── subscription_status.json  # 订阅状态
-└── market_tracking.log     # 运行日志
+│   ├── daily/              # 每日数据文件（自动生成）
+│   └── subscription_status.json  # 订阅状态（自动生成）
+└── market_tracking.log     # 运行日志（自动生成）
 ```
 
 ## 📝 使用说明
