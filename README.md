@@ -13,7 +13,7 @@
 
 ## 📧 邮件效果预览
 
-![邮件效果预览](assets/email_preview.png)
+![邮件效果预览](assets/email_preview.gif)
 
 ## 🚀 快速开始
 
