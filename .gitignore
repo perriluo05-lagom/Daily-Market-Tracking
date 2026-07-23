@@ -2,6 +2,9 @@
 node_modules/
 package-lock.json
 
+# Large GIF files (email recordings)
+*.gif
+
 # Environment files
 .env
 .env.local
