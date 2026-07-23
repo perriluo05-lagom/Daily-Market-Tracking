@@ -4,7 +4,8 @@ package-lock.json
 
 # Large GIF files (email recordings)
 *.gif
-!assets/
+!assets/*.gif
+!assets/*.png
 
 # Environment files
 .env
